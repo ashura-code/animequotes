@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Anime Quote",
+  "name": "Random Anime Quotes",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Eo_circle_yellow_letter-a.svg/1024px-Eo_circle_yellow_letter-a.svg.png?20200417183034",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Eo_circle_yellow_letter-a.svg/1024px-Eo_circle_yellow_letter-a.svg.png?20200417183034",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Eo_circle_yellow_letter-a.svg/1024px-Eo_circle_yellow_letter-a.svg.png?20200417183034",
       "type": "image/png",
       "sizes": "512x512"
     }
