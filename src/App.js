@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useState} from 'react';
 function App() {
+
+  //js start
+
+  const [end,setEnd] = useState([]);
+
+
+
+fetch("https://animechan.vercel.app/api/random").then(n=>{
+   n.json().then(data=>{
+     console.log(data);
+    //  setEnd(data);
+
+   })
+}).catch(err=>{console.log("Error"+ err)});
+
+
+
+
+
+  //js end
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+    <div>
+      {/* jsx  start*/}
+      <center><h1>The Anime Quote Generator</h1></center>
+
+      {/* <h2>{JSON.stringify(end)}</h2> */}
+
+      {/* jsx end */}
     </div>
+   
   );
 }
 
