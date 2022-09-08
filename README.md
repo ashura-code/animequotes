@@ -1,3 +1,7 @@
 ## Anime Quotes
-version 1.0
+version 2.0
+
+# What's new?
+
+Added a profile picture of the character
 
