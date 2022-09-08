@@ -33,8 +33,9 @@ h1{
 }
 
 .profile{
-  border-radius: 500px;
-  width: 100px;
+  border-radius: 50%;
+  width: 200px;
+
 }
 
 .footer{
