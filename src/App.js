@@ -8,14 +8,14 @@ function App() {
 //   //no right script start
 
 
-// function defeatIE() {if (document) {return false;}}
-// function defeatNS(e) {if 
-// (document.layers||(document.getElementById&&!document.all)) {
-// if (e.which==2||e.which==3) {return false;}}}
-// if (document.layers) 
-// {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=defeatNS;}
-// else{document.onmouseup=defeatNS;document.oncontextmenu=defeatIE;}
-// document.oncontextmenu=new Function("return false")
+function defeatIE() {if (document) {return false;}}
+function defeatNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=defeatNS;}
+else{document.onmouseup=defeatNS;document.oncontextmenu=defeatIE;}
+document.oncontextmenu=new Function("return false")
 
 
 // //no right click script ends
@@ -52,25 +52,23 @@ let character = JSON.stringify(name);
 
 //**************************api fecthing for profile starts here************************************************************************************************
 useEffect(() => {
+
+let picture =character;
 const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': 'cc7365826amsh843b939188aa9ebp14e9dajsn4316a1950472',
-		'X-RapidAPI-Host': 'google-image-search1.p.rapidapi.com'
+		'X-RapidAPI-Host': 'bing-image-search1.p.rapidapi.com'
 	}
 };
 
-let picture =character;
-console.log(picture + "is the character");
-
-fetch(`https://google-image-search1.p.rapidapi.com/v2/?q=${picture}&hl=en`, options)
+fetch(`https://bing-image-search1.p.rapidapi.com/images/search?q=${picture}`, options)
 	.then(response => response.json())
-	.then(data => {
-    setPic(data.response.images[0].image.url);
-    console.log(data.response.images[0].image.url);
-    setPic(data.response.images[0].image.url);
+	.then(response => {
+    console.log(response.value[0].thumbnailUrl)
+    setPic(response.value[0].thumbnailUrl)
   })
-	.catch(err => console.error("unable to fetch picture"));
+	.catch(err => console.error(err));
 },[character])
 
 //************************api fetching for profile ends here********************************************************************************************************************************  
@@ -82,7 +80,7 @@ fetch(`https://google-image-search1.p.rapidapi.com/v2/?q=${picture}&hl=en`, opti
     <div>
       {/* jsx  start*/}
       <center><h1>The Anime Quote</h1></center>
-      <center ><img className="profile" alt="profile" src={pic}></img></center>
+      <center ><img className="profile" alt="Loading.." src={pic}></img></center>
 
       <div className = "container">
 
@@ -92,7 +90,7 @@ fetch(`https://google-image-search1.p.rapidapi.com/v2/?q=${picture}&hl=en`, opti
       </div>
 
       <footer className='footer'>
-        <center><p class="more">Made with ❤️ by adhxtya</p></center>
+        <center><p className="more">Made with ❤️ by adhxtya</p></center>
       </footer>
 
 
