@@ -57,7 +57,7 @@ let picture =character;
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '3ec58b34c9msh45e1ffdc683c643p1921bfjsn48cf4932a6de',
+		'X-RapidAPI-Key': 'dfd23913d6mshcaca5d58482b7a3p1c9e20jsn068bb6e44bd3',
 		'X-RapidAPI-Host': 'bing-image-search1.p.rapidapi.com'
 	}
 };
