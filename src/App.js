@@ -32,17 +32,46 @@ document.oncontextmenu=new Function("return false")
   //https://api.rei.my.id/v3/quotes       not working using fetch
 
   //**********************************api fetching for anime quotes starts here***************************************************************************
-useEffect(() => {
-fetch("https://cors-anywhere.herokuapp.com/https://kyoko.rei.my.id/api/quotes.php").then(n=>{
-   n.json().then(data=>{
-     console.log(data);
-     setActivity(data.apiResult[0].english);
-      setType(data.apiResult[0].anime);
-      setName(data.apiResult[0].character); 
+useEffect(()=>{
+const url = 'https://waifu-it.p.rapidapi.com/quote';
+const options = {
+	method: 'GET',
+	headers: {
+		Authorization: 'a9383ce376156e792b4fd325457a0165ba8958e8cdee',
+		'X-RapidAPI-Key': 'cc7365826amsh843b939188aa9ebp14e9dajsn4316a1950472',
+		'X-RapidAPI-Host': 'waifu-it.p.rapidapi.com'
+	}
+};
 
-   })
-}).catch(err=>{console.log("Error"+ err)});
+async function fetchData() {
+	try {
+		const response = await fetch(url, options);
+		const result = await response.json();
+		console.log(result);
+    setActivity(result.quote);
+    setType(result.anime);
+    setName(result.author);
+    
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+fetchData();
 },[])
+
+
+
+
+
+
+
+
+
+
+
+	
+	
 
 //***************************************api fetching for anime quotes ends here********************************************************************************************************************************
 
