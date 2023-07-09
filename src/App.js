@@ -35,6 +35,7 @@ document.oncontextmenu=new Function("return false")
 useEffect(() => {
 fetch("https://cors-anywhere.herokuapp.com/https://kyoko.rei.my.id/api/quotes.php").then(n=>{
    n.json().then(data=>{
+     console.log(data);
      setActivity(data.apiResult[0].english);
       setType(data.apiResult[0].anime);
       setName(data.apiResult[0].character); 
