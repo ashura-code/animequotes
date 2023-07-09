@@ -33,12 +33,11 @@ document.oncontextmenu=new Function("return false")
 
   //**********************************api fetching for anime quotes starts here***************************************************************************
 useEffect(() => {
-fetch("https://animechan.vercel.app/api/random").then(n=>{
+fetch("https://cors-anywhere.herokuapp.com/https://kyoko.rei.my.id/api/quotes.php").then(n=>{
    n.json().then(data=>{
-     console.log(data);
-     setActivity(data.quote);
-      setType(data.anime);
-      setName(data.character);
+     setActivity(data.apiResult[0].english);
+      setType(data.apiResult[0].anime);
+      setName(data.apiResult[0].character); 
 
    })
 }).catch(err=>{console.log("Error"+ err)});
