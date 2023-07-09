@@ -32,8 +32,8 @@ document.oncontextmenu=new Function("return false")
   //https://api.rei.my.id/v3/quotes       not working using fetch
 
   //**********************************api fetching for anime quotes starts here***************************************************************************
-useEffect(() => {
-	const url = 'https://waifu-it.p.rapidapi.com/quote';
+useEffect(()=>{
+const url = 'https://waifu-it.p.rapidapi.com/quote';
 const options = {
 	method: 'GET',
 	headers: {
@@ -50,7 +50,7 @@ async function fetchData() {
 		console.log(result);
     setActivity(result.quote);
     setType(result.anime);
-    setName(data.author);
+    setName(result.author);
     
 	} catch (error) {
 		console.error(error);
